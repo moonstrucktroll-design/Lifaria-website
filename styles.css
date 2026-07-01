@@ -1,6 +1,6 @@
 :root {
-  --ink: #102636;
-  --ink-2: #18384f;
+  --ink: #163143;
+  --ink-2: #25475c;
   --paper: #fffdf7;
   --ivory: #f7f4eb;
   --mist: #eceee7;
@@ -15,6 +15,8 @@
   --muted: #5f6d70;
   --shadow-soft: 0 18px 46px rgba(16, 38, 54, 0.1);
   --shadow-strong: 0 28px 70px rgba(16, 38, 54, 0.18);
+  --display-font: Baskerville, "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --text-font: Avenir, "Avenir Next", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --max-page: 1220px;
 }
 
@@ -31,7 +33,7 @@ body {
   margin: 0;
   color: var(--ink);
   background: var(--ivory);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--text-font);
   letter-spacing: 0;
   overflow-x: hidden;
 }
@@ -78,23 +80,23 @@ blockquote {
 
 h1,
 h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 700;
+  font-family: var(--display-font);
+  font-weight: 500;
   letter-spacing: 0;
 }
 
 h1 {
   max-width: 720px;
   margin-bottom: 22px;
-  font-size: 6.2rem;
-  line-height: 0.92;
+  font-size: 5.55rem;
+  line-height: 0.98;
 }
 
 h2 {
   max-width: 880px;
   margin-bottom: 22px;
-  font-size: 3.8rem;
-  line-height: 0.98;
+  font-size: 3.15rem;
+  line-height: 1.04;
 }
 
 h3 {
@@ -165,7 +167,7 @@ li + li {
 .brand-subtitle {
   color: var(--muted);
   font-size: 0.72rem;
-  font-weight: 850;
+  font-weight: 760;
   text-transform: uppercase;
 }
 
@@ -177,7 +179,7 @@ li + li {
   min-width: 0;
   color: var(--ink);
   font-size: 0.92rem;
-  font-weight: 780;
+  font-weight: 720;
 }
 
 .site-nav a {
@@ -228,7 +230,7 @@ li + li {
   margin: 0 0 14px;
   color: var(--clay);
   font-size: 0.76rem;
-  font-weight: 850;
+  font-weight: 760;
   line-height: 1.25;
   text-transform: uppercase;
 }
@@ -255,7 +257,7 @@ li + li {
   padding: 0 22px;
   border: 1px solid transparent;
   border-radius: 999px;
-  font-weight: 820;
+  font-weight: 760;
   white-space: nowrap;
 }
 
@@ -309,8 +311,9 @@ li + li {
 }
 
 .hero-portrait strong {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display-font);
   font-size: 1.3rem;
+  font-weight: 600;
 }
 
 .hero-portrait span {
@@ -343,9 +346,9 @@ li + li {
 
 .signal-strip span {
   color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display-font);
   font-size: 1.45rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .signal-strip p {
@@ -391,7 +394,7 @@ li + li {
   border-radius: 8px;
   cursor: pointer;
   font-size: 0.95rem;
-  font-weight: 820;
+  font-weight: 720;
 }
 
 .tab-button:hover,
@@ -494,7 +497,7 @@ li + li {
   margin-bottom: 10px;
   color: var(--gold);
   font-size: 0.75rem;
-  font-weight: 850;
+  font-weight: 720;
   text-transform: uppercase;
 }
 
@@ -517,14 +520,15 @@ li + li {
 
 .bio-aside h3 {
   margin-bottom: 12px;
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display-font);
   font-size: 1.35rem;
+  font-weight: 600;
 }
 
 .text-link {
   justify-self: start;
   color: var(--blue);
-  font-weight: 850;
+  font-weight: 720;
 }
 
 .text-link:hover,
@@ -585,7 +589,7 @@ li + li {
 
 .phone-card figcaption {
   color: var(--muted);
-  font-weight: 800;
+  font-weight: 700;
   text-align: center;
 }
 
@@ -613,14 +617,14 @@ li + li {
   margin-bottom: 14px;
   color: #dfc6a7;
   font-size: 0.76rem;
-  font-weight: 850;
+  font-weight: 720;
   text-transform: uppercase;
 }
 
 .featured-haiku p {
   margin-bottom: 0;
   color: var(--paper);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display-font);
   font-size: 1.42rem;
   line-height: 1.45;
 }
@@ -639,7 +643,7 @@ li + li {
 
 .haiku-tools label {
   color: var(--ink);
-  font-weight: 850;
+  font-weight: 720;
 }
 
 .haiku-tools input {
@@ -660,7 +664,7 @@ li + li {
 .haiku-count {
   color: var(--muted);
   font-size: 0.92rem;
-  font-weight: 800;
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -687,8 +691,9 @@ li + li {
   margin: 0;
   padding-bottom: 10px;
   color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display-font);
   font-size: 1.7rem;
+  font-weight: 500;
   border-bottom: 1px solid var(--line);
 }
 
@@ -713,7 +718,7 @@ li + li {
 .haiku-card pre {
   margin: 0;
   color: var(--muted);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display-font);
   font-size: 0.98rem;
   line-height: 1.5;
   overflow-wrap: anywhere;
@@ -742,9 +747,9 @@ li + li {
 
 .site-footer span:first-child {
   color: var(--paper);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--display-font);
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .site-footer a {
