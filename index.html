@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lifaria | Life Book workspace</title>
+    <title>Lifaria | Private Life Book workspace</title>
     <meta
       name="description"
       content="Lifaria is a private Life Book workspace that turns scattered life material into source-backed moments, eras, and chapters you approve."
@@ -16,7 +16,7 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/lifaria-logo.png">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="preload" href="assets/lifaria-wordmark.webp" as="image">
+    <link rel="preload" href="assets/lifaria-wordmark-transparent.png" as="image">
     <link rel="preload" href="assets/screens/life-overview.webp" as="image">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
@@ -25,192 +25,255 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" aria-label="Site header">
-      <a class="brand-mark" href="#top" aria-label="Lifaria home">
-        <img src="assets/lifaria-wordmark.webp" alt="Lifaria">
+      <a class="brand-lockup" href="#overview" aria-label="Lifaria home" data-tab-link="overview">
+        <span class="brand-glow" aria-hidden="true"></span>
+        <img src="assets/lifaria-wordmark-transparent.png" alt="Lifaria">
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#life-book">Life Book</a>
-        <a href="#screens">Screens</a>
-        <a href="#privacy">Privacy</a>
-        <a href="#early-access" class="nav-cta">Early access</a>
+        <a href="#life-book" data-tab-link="life-book">Life Book</a>
+        <a href="#review" data-tab-link="review">Evidence</a>
+        <a href="#privacy" data-tab-link="privacy">Privacy</a>
+        <a class="nav-cta" href="mailto:hello@lifaria.com?subject=Lifaria%20early%20access">Early access</a>
       </nav>
     </header>
 
     <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-media" aria-hidden="true">
-          <img class="hero-screen screen-a" src="assets/screens/life-overview.webp" alt="">
-          <img class="hero-screen screen-b" src="assets/screens/moments-list.webp" alt="">
-          <img class="hero-screen screen-c" src="assets/screens/choose-sources.webp" alt="">
-        </div>
-
+      <section class="hero-panel" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <img class="hero-logo" src="assets/lifaria-wordmark.webp" alt="Lifaria">
+          <div class="brand-plate" aria-label="Lifaria">
+            <img src="assets/lifaria-wordmark-transparent.png" alt="">
+          </div>
           <p class="eyebrow">Life Book beta</p>
-          <h1 id="hero-title">Lifaria</h1>
-          <p class="hero-line">Every life deserves a book.</p>
-          <p class="hero-detail">
-            A private biography workspace that turns photos, notes, documents,
-            and voice into source-backed moments, eras, and chapters you approve.
+          <h1 id="hero-title">Every life deserves a book.</h1>
+          <p class="hero-text">
+            Lifaria turns photos, notes, documents, and voice into a private,
+            source-backed Life Book that stays in your hands.
           </p>
           <div class="hero-actions" aria-label="Primary actions">
             <a class="button primary" href="mailto:hello@lifaria.com?subject=Lifaria%20early%20access">Request early access</a>
-            <a class="button secondary" href="#life-book">See Life Book</a>
-          </div>
-          <div class="hero-flags" aria-label="Product principles">
-            <span>Private by default</span>
-            <span>Source-backed</span>
-            <span>User-approved</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="proof-strip" aria-label="Life Book path summary">
-        <div>
-          <strong>Sources</strong>
-          <span>photos, files, notes, voice</span>
-        </div>
-        <div>
-          <strong>Moments</strong>
-          <span>review before they become story</span>
-        </div>
-        <div>
-          <strong>Eras</strong>
-          <span>shape the arc yourself</span>
-        </div>
-        <div>
-          <strong>Chapters</strong>
-          <span>editable, exportable, owned</span>
-        </div>
-      </section>
-
-      <section class="section" id="life-book" aria-labelledby="life-book-title">
-        <div class="section-kicker">Personal biography workspace</div>
-        <div class="section-heading">
-          <h2 id="life-book-title">From life fragments to a Life Book.</h2>
-          <p>
-            Lifaria is designed for the scattered material that already holds a life:
-            camera rolls, journals, scans, keepsakes, captions, resumes, travel records,
-            and stories recorded out loud.
-          </p>
-        </div>
-
-        <div class="flow-grid">
-          <article class="flow-card">
-            <span class="step-badge">1</span>
-            <h3>Choose sources</h3>
-            <p>Start with selected uploads and notes before larger account connections come later.</p>
-          </article>
-          <article class="flow-card">
-            <span class="step-badge">2</span>
-            <h3>Review moments</h3>
-            <p>See why a memory was suggested, then accept, reject, rename, or rewrite it.</p>
-          </article>
-          <article class="flow-card">
-            <span class="step-badge">3</span>
-            <h3>Map eras</h3>
-            <p>Shape crossings, paths, and seasons into a structure that feels like your life.</p>
-          </article>
-          <article class="flow-card">
-            <span class="step-badge">4</span>
-            <h3>Draft chapters</h3>
-            <p>Turn approved moments into editable chapters for a digital book or PDF export.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="screen-band" id="screens" aria-labelledby="screens-title">
-        <div class="screen-copy">
-          <p class="eyebrow light">Inside the prototype</p>
-          <h2 id="screens-title">A calm workspace for intimate material.</h2>
-          <p>
-            The app keeps user judgment close to every AI step. Suggestions stay
-            tied to evidence until you decide what belongs in the book.
-          </p>
-
-          <div class="screen-tabs" role="tablist" aria-label="Choose a Lifaria screen">
-            <button class="screen-tab active" type="button" data-screen="life-overview" aria-selected="true">Life</button>
-            <button class="screen-tab" type="button" data-screen="choose-sources" aria-selected="false">Sources</button>
-            <button class="screen-tab" type="button" data-screen="moments-list" aria-selected="false">Moments</button>
-            <button class="screen-tab" type="button" data-screen="moment-detail" aria-selected="false">Evidence</button>
-            <button class="screen-tab" type="button" data-screen="chapter-board" aria-selected="false">Chapters</button>
-          </div>
-
-          <div class="screen-note" aria-live="polite">
-            <span id="screen-eyebrow">Life workspace</span>
-            <strong id="screen-title">The Shape of a Life</strong>
-            <p id="screen-description">
-              A working Life Book assembled from uploads, remembered moments, suggested eras, and chapter drafts.
-            </p>
+            <a class="button secondary" href="#life-book" data-tab-link="life-book">Open Life Book</a>
           </div>
         </div>
 
-        <div class="phone-stage" aria-label="Selected Lifaria app screen">
-          <div class="phone-shell">
-            <img id="screen-image" src="assets/screens/life-overview.webp" alt="Lifaria Life Book overview screen">
+        <div class="hero-showcase" aria-label="Lifaria app preview">
+          <div class="phone-shell hero-phone">
+            <img src="assets/screens/life-overview.webp" alt="Lifaria Life Book overview screen">
+          </div>
+          <div class="source-card card-top">
+            <strong>Sources</strong>
+            <span>Photos, files, notes, voice</span>
+          </div>
+          <div class="source-card card-bottom">
+            <strong>Chapters</strong>
+            <span>Drafted from approved moments</span>
           </div>
         </div>
       </section>
 
-      <section class="section privacy-section" id="privacy" aria-labelledby="privacy-title">
-        <div class="section-kicker">Trust model</div>
-        <div class="section-heading">
-          <h2 id="privacy-title">Biography first, AI second.</h2>
-          <p>
-            Lifaria treats privacy, consent, and ownership as core product features.
-            The goal is not to automate your life story away from you. It is to help
-            you find the shape, then keep you in charge of what becomes official.
-          </p>
+      <section class="workspace" aria-label="Explore Lifaria">
+        <div class="tab-shell">
+          <div class="tab-intro">
+            <span class="tab-kicker">Explore the product</span>
+            <h2>Choose a view.</h2>
+          </div>
+
+          <div class="tab-list" role="tablist" aria-label="Lifaria product views">
+            <button class="tab-button" id="tab-overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true" data-tab="overview">
+              Overview
+            </button>
+            <button class="tab-button" id="tab-life-book" type="button" role="tab" aria-controls="panel-life-book" aria-selected="false" data-tab="life-book">
+              Life Book
+            </button>
+            <button class="tab-button" id="tab-sources" type="button" role="tab" aria-controls="panel-sources" aria-selected="false" data-tab="sources">
+              Sources
+            </button>
+            <button class="tab-button" id="tab-review" type="button" role="tab" aria-controls="panel-review" aria-selected="false" data-tab="review">
+              Review
+            </button>
+            <button class="tab-button" id="tab-privacy" type="button" role="tab" aria-controls="panel-privacy" aria-selected="false" data-tab="privacy">
+              Privacy
+            </button>
+            <button class="tab-button" id="tab-beta" type="button" role="tab" aria-controls="panel-beta" aria-selected="false" data-tab="beta">
+              Beta
+            </button>
+          </div>
         </div>
 
-        <div class="principle-grid">
-          <article class="principle-card">
-            <h3>Private by default</h3>
-            <p>No source, moment, chapter, invite, or export becomes public without explicit action.</p>
-          </article>
-          <article class="principle-card">
-            <h3>Source-backed interpretation</h3>
-            <p>Suggestions show evidence signals like source clusters, dates, places, tags, and narrative clues.</p>
-          </article>
-          <article class="principle-card">
-            <h3>User sovereignty</h3>
-            <p>You accept, reject, rename, rewrite, and export. Lifaria proposes structure, then waits for you.</p>
-          </article>
-          <article class="principle-card">
-            <h3>Manual mode</h3>
-            <p>For sensitive work, restrict AI to organizing, sequencing, tagging, and deduplicating.</p>
-          </article>
-        </div>
-      </section>
+        <div class="tab-panels">
+          <section class="tab-panel" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview" tabindex="0" data-panel="overview">
+            <div class="panel-grid">
+              <div class="panel-copy">
+                <p class="eyebrow">Private biography workspace</p>
+                <h2>Life material becomes a story you can inspect.</h2>
+                <p>
+                  Lifaria gathers the fragments that already hold a life and
+                  organizes them into moments, eras, and chapters without taking
+                  judgment away from the person whose story it is.
+                </p>
+                <div class="path-row" aria-label="Life Book path">
+                  <span>Sources</span>
+                  <span>Moments</span>
+                  <span>Eras</span>
+                  <span>Chapters</span>
+                </div>
+              </div>
+              <div class="preview-pair" aria-label="Overview screens">
+                <div class="phone-shell">
+                  <img src="assets/screens/life-overview.webp" alt="Lifaria Life Book overview screen">
+                </div>
+                <div class="mini-panel">
+                  <span>The promise</span>
+                  <strong>AI can suggest structure. You decide what becomes official.</strong>
+                </div>
+              </div>
+            </div>
+          </section>
 
-      <section class="section story-section" aria-labelledby="formats-title">
-        <div class="story-image-grid" aria-hidden="true">
-          <img src="assets/screens/book-choice.webp" alt="">
-          <img src="assets/screens/era-mapping.webp" alt="">
-          <img src="assets/screens/source-controls.webp" alt="">
-        </div>
-        <div class="story-copy">
-          <p class="eyebrow">Product map</p>
-          <h2 id="formats-title">Start with Life Book. Grow into more ways of remembering.</h2>
-          <p>
-            The beta begins with an individual Life Book. Family Book, Career Book,
-            Project Book, and Know Me Book remain visible as future formats built
-            from the same source-backed narrative engine.
-          </p>
-        </div>
-      </section>
+          <section class="tab-panel" id="panel-life-book" role="tabpanel" aria-labelledby="tab-life-book" tabindex="0" data-panel="life-book" hidden>
+            <div class="panel-grid">
+              <div class="panel-copy">
+                <p class="eyebrow">Life Book</p>
+                <h2>A book-shaped workspace for a real life.</h2>
+                <p>
+                  Build from a living table of contents: accepted moments,
+                  remembered places, important people, and eras that can be
+                  renamed until they feel true.
+                </p>
+                <div class="feature-grid compact">
+                  <article>
+                    <span>01</span>
+                    <h3>Choose a format</h3>
+                    <p>Start with an individual Life Book, then grow into future book types.</p>
+                  </article>
+                  <article>
+                    <span>02</span>
+                    <h3>Shape chapters</h3>
+                    <p>Move from eras into editable chapter drafts without losing provenance.</p>
+                  </article>
+                </div>
+              </div>
+              <div class="stacked-preview" aria-label="Life Book screens">
+                <img src="assets/screens/book-choice.webp" alt="Lifaria book format screen">
+                <img src="assets/screens/chapter-board.webp" alt="Lifaria chapter board screen">
+              </div>
+            </div>
+          </section>
 
-      <section class="early-access" id="early-access" aria-labelledby="early-access-title">
-        <img src="assets/lifaria-wordmark.webp" alt="Lifaria">
-        <div>
-          <p class="eyebrow">Lifaria beta</p>
-          <h2 id="early-access-title">Build a book while you are still living the story.</h2>
-          <p>
-            Lifaria is for people who want to preserve, understand, and shape a life
-            story from the material they already have.
-          </p>
+          <section class="tab-panel" id="panel-sources" role="tabpanel" aria-labelledby="tab-sources" tabindex="0" data-panel="sources" hidden>
+            <div class="panel-grid">
+              <div class="panel-copy">
+                <p class="eyebrow">Sources</p>
+                <h2>Begin with what you trust Lifaria to read.</h2>
+                <p>
+                  The beta starts with selected uploads and notes. Later
+                  connections can be added deliberately, source by source, with
+                  the same review-first model.
+                </p>
+                <div class="source-list" aria-label="Supported source types">
+                  <span>Photos</span>
+                  <span>Scans</span>
+                  <span>Journals</span>
+                  <span>Files</span>
+                  <span>Voice</span>
+                  <span>Captions</span>
+                </div>
+              </div>
+              <div class="preview-pair" aria-label="Source screens">
+                <div class="phone-shell">
+                  <img src="assets/screens/choose-sources.webp" alt="Lifaria source picker screen">
+                </div>
+                <div class="phone-shell offset-phone">
+                  <img src="assets/screens/source-controls.webp" alt="Lifaria source controls screen">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tab-panel" id="panel-review" role="tabpanel" aria-labelledby="tab-review" tabindex="0" data-panel="review" hidden>
+            <div class="panel-grid">
+              <div class="panel-copy">
+                <p class="eyebrow">Evidence review</p>
+                <h2>Every proposed memory keeps its receipts.</h2>
+                <p>
+                  Lifaria can surface meaningful moments, but the app keeps the
+                  supporting clues close: source clusters, dates, places, themes,
+                  and narrative signals remain visible before acceptance.
+                </p>
+                <div class="feature-grid compact">
+                  <article>
+                    <span>Accept</span>
+                    <h3>Keep what rings true</h3>
+                    <p>Approved moments can move into eras and chapter drafts.</p>
+                  </article>
+                  <article>
+                    <span>Revise</span>
+                    <h3>Rewrite the meaning</h3>
+                    <p>Names, dates, emphasis, and interpretation stay editable.</p>
+                  </article>
+                </div>
+              </div>
+              <div class="preview-pair" aria-label="Review screens">
+                <div class="phone-shell">
+                  <img src="assets/screens/moments-list.webp" alt="Lifaria meaningful moments review screen">
+                </div>
+                <div class="phone-shell offset-phone">
+                  <img src="assets/screens/moment-detail.webp" alt="Lifaria moment evidence screen">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="tab-panel" id="panel-privacy" role="tabpanel" aria-labelledby="tab-privacy" tabindex="0" data-panel="privacy" hidden>
+            <div class="panel-grid trust-grid">
+              <div class="panel-copy">
+                <p class="eyebrow">Trust model</p>
+                <h2>Biography first, AI second.</h2>
+                <p>
+                  Lifaria treats privacy, consent, and ownership as core product
+                  features. The goal is not to automate your life story away
+                  from you. It is to help you find the shape and stay in charge.
+                </p>
+              </div>
+              <div class="feature-grid trust-cards">
+                <article>
+                  <span>Private</span>
+                  <h3>Nothing becomes public by default</h3>
+                  <p>No source, moment, chapter, invite, or export is shared without action.</p>
+                </article>
+                <article>
+                  <span>Grounded</span>
+                  <h3>Interpretation stays tied to evidence</h3>
+                  <p>Suggested memories remain connected to the source signals that created them.</p>
+                </article>
+                <article>
+                  <span>Owned</span>
+                  <h3>The book belongs to you</h3>
+                  <p>Accept, reject, rename, rewrite, reorder, and export on your terms.</p>
+                </article>
+                <article>
+                  <span>Manual</span>
+                  <h3>Sensitive work can stay restrained</h3>
+                  <p>Limit AI to organizing, sequencing, tagging, and deduplicating.</p>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section class="tab-panel beta-panel" id="panel-beta" role="tabpanel" aria-labelledby="tab-beta" tabindex="0" data-panel="beta" hidden>
+            <div class="beta-card">
+              <div class="beta-mark">
+                <img src="assets/lifaria-wordmark-transparent.png" alt="Lifaria">
+              </div>
+              <p class="eyebrow">Lifaria beta</p>
+              <h2>Build a book while you are still living the story.</h2>
+              <p>
+                Lifaria is for people who want to preserve, understand, and
+                shape a life story from the material they already have.
+              </p>
+              <a class="button primary" href="mailto:hello@lifaria.com?subject=Lifaria%20early%20access">Request early access</a>
+            </div>
+          </section>
         </div>
-        <a class="button primary" href="mailto:hello@lifaria.com?subject=Lifaria%20early%20access">Request early access</a>
       </section>
     </main>
 

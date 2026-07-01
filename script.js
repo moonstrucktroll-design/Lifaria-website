@@ -1,69 +1,75 @@
-const screenData = {
-  "life-overview": {
-    image: "assets/screens/life-overview.webp",
-    alt: "Lifaria Life Book overview screen",
-    eyebrow: "Life workspace",
-    title: "The Shape of a Life",
-    description:
-      "A working Life Book assembled from uploads, remembered moments, suggested eras, and chapter drafts."
-  },
-  "choose-sources": {
-    image: "assets/screens/choose-sources.webp",
-    alt: "Lifaria source picker screen",
-    eyebrow: "Source intake",
-    title: "Choose what Lifaria can use",
-    description:
-      "Start with selected uploads and notes. Larger account connections can come later."
-  },
-  "moments-list": {
-    image: "assets/screens/moments-list.webp",
-    alt: "Lifaria meaningful moments review screen",
-    eyebrow: "AI event detection",
-    title: "Meaningful moments",
-    description:
-      "Review memories Lifaria found before opening their evidence, meaning, and era placement details."
-  },
-  "moment-detail": {
-    image: "assets/screens/moment-detail.webp",
-    alt: "Lifaria moment evidence screen",
-    eyebrow: "Evidence review",
-    title: "Why Lifaria found it",
-    description:
-      "Each proposed memory stays tied to source clusters, narrative clues, and theme tags before it becomes part of the book."
-  },
-  "chapter-board": {
-    image: "assets/screens/chapter-board.webp",
-    alt: "Lifaria chapter board screen",
-    eyebrow: "Chapter builder",
-    title: "Editable chapters",
-    description:
-      "Approved moments become a draft structure you can rename, reorder, rewrite, and export."
-  }
-};
+const tabs = Array.from(document.querySelectorAll("[role='tab'][data-tab]"));
+const panels = Array.from(document.querySelectorAll("[role='tabpanel'][data-panel]"));
+const tabLinks = Array.from(document.querySelectorAll("[data-tab-link]"));
+const knownTabs = new Set(tabs.map((tab) => tab.dataset.tab));
 
-const tabs = document.querySelectorAll(".screen-tab");
-const screenImage = document.querySelector("#screen-image");
-const screenEyebrow = document.querySelector("#screen-eyebrow");
-const screenTitle = document.querySelector("#screen-title");
-const screenDescription = document.querySelector("#screen-description");
-
-function selectScreen(screenKey) {
-  const next = screenData[screenKey];
-  if (!next) return;
-
-  screenImage.src = next.image;
-  screenImage.alt = next.alt;
-  screenEyebrow.textContent = next.eyebrow;
-  screenTitle.textContent = next.title;
-  screenDescription.textContent = next.description;
+function activateTab(tabId, options = {}) {
+  if (!knownTabs.has(tabId)) return;
 
   tabs.forEach((tab) => {
-    const isActive = tab.dataset.screen === screenKey;
-    tab.classList.toggle("active", isActive);
-    tab.setAttribute("aria-selected", String(isActive));
+    const isSelected = tab.dataset.tab === tabId;
+    tab.setAttribute("aria-selected", String(isSelected));
+    tab.tabIndex = isSelected ? 0 : -1;
   });
+
+  panels.forEach((panel) => {
+    panel.hidden = panel.dataset.panel !== tabId;
+  });
+
+  if (options.updateHash !== false) {
+    history.replaceState(null, "", `#${tabId}`);
+  }
+
+  if (options.focusPanel) {
+    document.querySelector(`[data-panel="${tabId}"]`)?.focus({ preventScroll: true });
+  }
 }
 
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => selectScreen(tab.dataset.screen));
+function tabFromHash() {
+  const hash = window.location.hash.replace("#", "");
+  return knownTabs.has(hash) ? hash : "overview";
+}
+
+tabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => activateTab(tab.dataset.tab));
+
+  tab.addEventListener("keydown", (event) => {
+    const currentIndex = tabs.indexOf(tab);
+    let nextIndex = currentIndex;
+
+    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      nextIndex = (currentIndex + 1) % tabs.length;
+    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = tabs.length - 1;
+    } else {
+      return;
+    }
+
+    event.preventDefault();
+    tabs[nextIndex].focus();
+    activateTab(tabs[nextIndex].dataset.tab);
+  });
+
+  tab.tabIndex = index === 0 ? 0 : -1;
 });
+
+tabLinks.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    const tabId = link.dataset.tabLink;
+    if (!knownTabs.has(tabId)) return;
+
+    event.preventDefault();
+    activateTab(tabId);
+    document.querySelector(".workspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+});
+
+window.addEventListener("hashchange", () => {
+  activateTab(tabFromHash(), { updateHash: false });
+});
+
+activateTab(tabFromHash(), { updateHash: false });
