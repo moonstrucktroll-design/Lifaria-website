@@ -5,6 +5,20 @@ const knownTabs = new Set(tabs.map((tab) => tab.dataset.tab));
 const haikuArchive = document.querySelector("#haiku-archive");
 const haikuFilter = document.querySelector("#haiku-filter");
 const haikuCount = document.querySelector("#haiku-count");
+const monthOrder = [
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+];
 let haikuEntries = [];
 
 function activateTab(tabId, options = {}) {
@@ -35,12 +49,12 @@ function tabFromHash() {
 }
 
 function parseHaikuYear(text) {
-  const monthHeading = /^(July|August|September|October|November|December|January|February|March|April|May|June)\s+\d/i;
+  const headingPattern = /^(July|August|September|October|November|December|January|February|March|April|May|June)\s+\d/i;
   const blocks = [];
   let current = [];
 
   text.replace(/\r/g, "").split("\n").forEach((line) => {
-    if (monthHeading.test(line) && current.length) {
+    if (headingPattern.test(line) && current.length) {
       blocks.push(current);
       current = [line];
       return;
@@ -51,13 +65,53 @@ function parseHaikuYear(text) {
 
   if (current.length) blocks.push(current);
 
-  return blocks
-    .map((lines, index) => {
-      const heading = lines.shift()?.trim() || `Week ${index + 1}`;
-      const body = lines.join("\n").trim();
-      const title = body.split("\n").find((line) => line.trim() && !/[А-Яа-я]/.test(line))?.trim() || "Weekly haiku";
-      return { heading, title, body };
-    });
+  return blocks.map((lines, index) => {
+    const heading = lines.shift()?.trim() || `Week ${index + 1}`;
+    const body = lines.join("\n").trim();
+    const month = heading.match(/^[A-Za-z]+/)?.[0] || "Other";
+    const title =
+      body
+        .split("\n")
+        .map((line) => line.trim())
+        .find((line) => line && !/[А-Яа-я]/.test(line) && line.length <= 48) || "Weekly haiku";
+
+    return { heading, month, title, body };
+  });
+}
+
+function groupByMonth(entries) {
+  return entries.reduce((groups, entry) => {
+    if (!groups.has(entry.month)) groups.set(entry.month, []);
+    groups.get(entry.month).push(entry);
+    return groups;
+  }, new Map());
+}
+
+function orderedMonths(groups) {
+  return Array.from(groups.keys()).sort((a, b) => {
+    const aIndex = monthOrder.indexOf(a);
+    const bIndex = monthOrder.indexOf(b);
+    if (aIndex === -1 && bIndex === -1) return a.localeCompare(b);
+    if (aIndex === -1) return 1;
+    if (bIndex === -1) return -1;
+    return aIndex - bIndex;
+  });
+}
+
+function createHaikuCard(entry) {
+  const article = document.createElement("article");
+  article.className = "haiku-card";
+
+  const heading = document.createElement("span");
+  const title = document.createElement("h4");
+  const body = document.createElement("pre");
+
+  heading.textContent = entry.heading;
+  title.textContent = entry.title;
+  body.textContent = entry.body;
+  article.append(heading, title, body);
+
+  return article;
 }
 
 function renderHaiku(entries) {
@@ -69,22 +123,33 @@ function renderHaiku(entries) {
     const text = `${entry.heading} ${entry.title} ${entry.body}`.toLowerCase();
     return text.includes(query);
   });
+  const groups = groupByMonth(filtered);
+  const fragment = document.createDocumentFragment();
 
   haikuCount.textContent = `${filtered.length} of ${entries.length} weekly haiku`;
 
-  filtered.forEach((entry) => {
-    const article = document.createElement("article");
-    article.className = "haiku-card";
-    const heading = document.createElement("span");
-    const title = document.createElement("h3");
-    const body = document.createElement("pre");
+  orderedMonths(groups).forEach((month) => {
+    const section = document.createElement("section");
+    section.className = "haiku-month";
 
-    heading.textContent = entry.heading;
-    title.textContent = entry.title;
-    body.textContent = entry.body;
-    article.append(heading, title, body);
-    haikuArchive.append(article);
+    const heading = document.createElement("h3");
+    const grid = document.createElement("div");
+    grid.className = "haiku-month-grid";
+
+    heading.textContent = month;
+    groups.get(month).forEach((entry) => grid.append(createHaikuCard(entry)));
+    section.append(heading, grid);
+    fragment.append(section);
   });
+
+  if (!filtered.length) {
+    const empty = document.createElement("p");
+    empty.className = "empty-state";
+    empty.textContent = "No haiku match that search.";
+    fragment.append(empty);
+  }
+
+  haikuArchive.append(fragment);
 }
 
 async function loadHaikuYear() {
@@ -99,13 +164,18 @@ async function loadHaikuYear() {
   } catch {
     haikuCount.textContent = "Haiku archive could not load.";
     haikuArchive.innerHTML = `
-      <article class="haiku-card">
-        <span>June 26th - 52nd</span>
-        <h3>Lucky</h3>
-        <pre>Fortune finds the door!
+      <section class="haiku-month">
+        <h3>June</h3>
+        <div class="haiku-month-grid">
+          <article class="haiku-card">
+            <span>June 26th - 52nd</span>
+            <h4>Lucky</h4>
+            <pre>Fortune finds the door!
 Luck pours in and stays for good.
 River finds the sea!</pre>
-      </article>
+          </article>
+        </div>
+      </section>
     `;
   }
 }
@@ -144,7 +214,11 @@ tabLinks.forEach((link) => {
 
     event.preventDefault();
     activateTab(tabId);
-    document.querySelector(".workspace")?.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    const target = link.classList.contains("brand-lockup")
+      ? document.querySelector("#main")
+      : document.querySelector(".tab-section");
+    target?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
 

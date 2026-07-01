@@ -3,20 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lana Schuler | Lifaria, writing, haiku</title>
+    <title>Lana Schuler | Product, Lifaria, theatre, haiku</title>
     <meta
       name="description"
-      content="Personal website for Lana Schuler: responsible AI, Lifaria beta, TheatreWorks notes, weekly haiku, and blog drafts."
+      content="Personal website for Lana Schuler: product leadership, responsible AI, Lifaria beta, TheatreWorks, weekly haiku, and notes."
     >
     <meta property="og:title" content="Lana Schuler">
     <meta
       property="og:description"
-      content="A personal home for responsible AI, Lifaria, theatre notes, and a year of weekly haiku."
+      content="A considered personal home for product leadership, responsible AI, Lifaria, theatre, and weekly haiku."
     >
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/lifaria-logo.png">
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="preload" href="assets/lifaria-wordmark-transparent.png" as="image">
+    <link rel="preload" href="assets/lana-schuler-linkedin.jpg" as="image">
     <link rel="preload" href="assets/screens/life-overview.webp" as="image">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
@@ -27,268 +27,341 @@
     <header class="site-header" aria-label="Site header">
       <a class="brand-lockup" href="#home" aria-label="Lana Schuler home" data-tab-link="home">
         <span class="brand-name">Lana Schuler</span>
-        <span class="brand-subtitle">Lifaria / notes / haiku</span>
+        <span class="brand-subtitle">Product / Lifaria / poems</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#bio" data-tab-link="bio">Bio</a>
         <a href="#lifaria" data-tab-link="lifaria">Lifaria</a>
-        <a href="#hobbies" data-tab-link="hobbies">Hobbies</a>
+        <a href="#theatre" data-tab-link="theatre">Theatre</a>
+        <a href="#haiku" data-tab-link="haiku">Haiku</a>
         <a href="#blog" data-tab-link="blog">Blog</a>
         <a class="nav-cta" href="mailto:hello@lifaria.com?subject=Hello%20Lana">Contact</a>
       </nav>
     </header>
 
     <main id="main">
-      <section class="hero-panel" aria-labelledby="hero-title">
+      <section class="hero-section" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">Personal site / Lifaria beta</p>
+          <p class="kicker">Product leadership / responsible AI / Lifaria beta</p>
           <h1 id="hero-title">Lana Schuler</h1>
-          <p class="hero-text">
-            Product leader at Google working across responsible AI,
-            privacy-first personalization, and trust-centered platforms;
-            builder of Lifaria, weekly haiku writer, and TheatreWorks board
-            trustee.
+          <p class="hero-lede">
+            I build products that make complex personal systems safer, more
+            intelligible, and more humane: responsible AI, privacy-first
+            personalization, source-backed memory, and tools that leave room
+            for judgment.
           </p>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="#bio" data-tab-link="bio">Read bio</a>
-            <a class="button secondary" href="#lifaria" data-tab-link="lifaria">Open Lifaria</a>
+            <a class="button primary" href="#bio" data-tab-link="bio">Read the profile</a>
+            <a class="button secondary" href="#lifaria" data-tab-link="lifaria">See Lifaria</a>
           </div>
         </div>
 
-        <aside class="identity-card" aria-label="Lana Schuler profile">
-          <img class="portrait-photo" src="assets/lana-schuler-linkedin.jpg" alt="Lana Schuler">
-          <div>
-            <p class="eyebrow">Current center</p>
-            <h2>AI, memory, theatre, poems.</h2>
-            <p>
-              A compact map of what I am building, watching, writing, and
-              learning in public.
-            </p>
-          </div>
-        </aside>
+        <figure class="hero-portrait">
+          <img src="assets/lana-schuler-linkedin.jpg" alt="Lana Schuler">
+          <figcaption>
+            <strong>Product Leadership @ Google</strong>
+            <span>Lifaria beta creator · TheatreWorks trustee · weekly haiku writer</span>
+          </figcaption>
+        </figure>
       </section>
 
-      <section class="workspace" aria-label="Explore Lana Schuler">
-        <div class="tab-shell">
-          <div class="tab-intro">
-            <span class="tab-kicker">Explore</span>
-            <h2>Choose a tab.</h2>
-          </div>
+      <section class="signal-strip" aria-label="Profile highlights">
+        <div>
+          <span>20+ years</span>
+          <p>Product leadership across startups, growth-stage companies, and enterprise platforms.</p>
+        </div>
+        <div>
+          <span>Current focus</span>
+          <p>Responsible AI, privacy-first personalization, governance, and user trust.</p>
+        </div>
+        <div>
+          <span>Creative practice</span>
+          <p>TheatreWorks board service, weekly bilingual haiku, and notes on memory.</p>
+        </div>
+      </section>
 
-          <div class="tab-list" role="tablist" aria-label="Website sections">
-            <button class="tab-button" id="tab-home" type="button" role="tab" aria-controls="panel-home" aria-selected="true" data-tab="home">
-              Home
-            </button>
-            <button class="tab-button" id="tab-bio" type="button" role="tab" aria-controls="panel-bio" aria-selected="false" data-tab="bio">
-              Bio
-            </button>
-            <button class="tab-button" id="tab-lifaria" type="button" role="tab" aria-controls="panel-lifaria" aria-selected="false" data-tab="lifaria">
-              Lifaria
-            </button>
-            <button class="tab-button" id="tab-hobbies" type="button" role="tab" aria-controls="panel-hobbies" aria-selected="false" data-tab="hobbies">
-              Hobbies
-            </button>
-            <button class="tab-button" id="tab-haiku" type="button" role="tab" aria-controls="panel-haiku" aria-selected="false" data-tab="haiku">
-              Haiku
-            </button>
-            <button class="tab-button" id="tab-blog" type="button" role="tab" aria-controls="panel-blog" aria-selected="false" data-tab="blog">
-              Blog
-            </button>
-          </div>
+      <section class="tab-section" aria-label="Explore Lana Schuler">
+        <div class="tab-list" role="tablist" aria-label="Website sections">
+          <button class="tab-button" id="tab-home" type="button" role="tab" aria-controls="panel-home" aria-selected="true" data-tab="home">
+            Home
+          </button>
+          <button class="tab-button" id="tab-bio" type="button" role="tab" aria-controls="panel-bio" aria-selected="false" data-tab="bio">
+            Bio
+          </button>
+          <button class="tab-button" id="tab-lifaria" type="button" role="tab" aria-controls="panel-lifaria" aria-selected="false" data-tab="lifaria">
+            Lifaria
+          </button>
+          <button class="tab-button" id="tab-theatre" type="button" role="tab" aria-controls="panel-theatre" aria-selected="false" data-tab="theatre">
+            Theatre
+          </button>
+          <button class="tab-button" id="tab-haiku" type="button" role="tab" aria-controls="panel-haiku" aria-selected="false" data-tab="haiku">
+            Haiku
+          </button>
+          <button class="tab-button" id="tab-blog" type="button" role="tab" aria-controls="panel-blog" aria-selected="false" data-tab="blog">
+            Blog
+          </button>
         </div>
 
         <div class="tab-panels">
           <section class="tab-panel" id="panel-home" role="tabpanel" aria-labelledby="tab-home" tabindex="0" data-panel="home">
-            <div class="home-grid">
-              <article class="home-card large-card">
-                <p class="eyebrow">Home base</p>
-                <h2>A personal site with Lifaria at the center, not the whole room.</h2>
+            <div class="panel-heading">
+              <p class="kicker">Home</p>
+              <h2>A throughline: systems that protect the person inside them.</h2>
+            </div>
+            <div class="essay-layout">
+              <div class="lead-copy">
                 <p>
-                  This space collects the product work, the creative practice,
-                  the theatre notes, and the weekly poems into one navigable
-                  place.
+                  This site brings together the professional and personal work
+                  that usually lives in separate rooms: product leadership in
+                  responsible AI, Lifaria as an evolving beta product, board
+                  service in live theatre, and a year of weekly haiku.
                 </p>
-              </article>
-              <article class="home-card accent-blue">
-                <span>Beta product</span>
-                <h3>Lifaria</h3>
-                <p>A private Life Book workspace for source-backed biography.</p>
-              </article>
-              <article class="home-card accent-sage">
-                <span>Ritual</span>
-                <h3>52 weekly haiku</h3>
-                <p>A bilingual year of small observations, ordinary magic, and weather.</p>
-              </article>
-              <article class="home-card accent-rose">
-                <span>Notebook</span>
-                <h3>TheatreWorks board</h3>
-                <p>A place for watchlists, performance notes, and after-show reflections.</p>
-              </article>
-              <article class="home-card accent-gold">
-                <span>Writing</span>
-                <h3>Blog drafts</h3>
-                <p>Short essays on AI, memory, theater, poetry, and building in public.</p>
-              </article>
+                <p>
+                  The connective tissue is attention. How do we design
+                  technology that remembers without overreaching, personalizes
+                  without reducing a person to signals, and tells stories
+                  without taking ownership away from the person whose life is
+                  being shaped?
+                </p>
+              </div>
+              <div class="principle-grid">
+                <article>
+                  <span>Product</span>
+                  <h3>Make ambiguity usable</h3>
+                  <p>Turn fast-moving, regulated, or emotionally complex domains into clear product choices.</p>
+                </article>
+                <article>
+                  <span>Trust</span>
+                  <h3>Build privacy into the architecture</h3>
+                  <p>Treat governance, consent, signal use, and memory as first-order design decisions.</p>
+                </article>
+                <article>
+                  <span>Story</span>
+                  <h3>Keep human judgment central</h3>
+                  <p>Use AI to propose structure, not to flatten biography, creativity, or taste.</p>
+                </article>
+              </div>
             </div>
           </section>
 
           <section class="tab-panel" id="panel-bio" role="tabpanel" aria-labelledby="tab-bio" tabindex="0" data-panel="bio" hidden>
-            <div class="panel-grid bio-grid">
-              <div class="panel-copy">
-                <p class="eyebrow">Short bio</p>
-                <h2>Builder, storyteller, and keeper of small rituals.</h2>
+            <div class="panel-heading">
+              <p class="kicker">Bio</p>
+              <h2>Product executive, responsible AI builder, and creative observer.</h2>
+            </div>
+            <div class="bio-body">
+              <div class="bio-main">
                 <p>
                   Lana Schuler is a product executive in Product Leadership at
-                  Google, specializing in responsible AI, privacy-first
-                  platforms, consumer technology, communications, mobility,
-                  e-commerce, and AdTech. Across more than 20 years, she has
-                  shaped product vision, translated ambiguity into durable
-                  strategy, and led cross-functional teams through growth and
-                  transformation.
+                  Google, with deep experience across responsible AI,
+                  privacy-first platforms, consumer technology, communications,
+                  mobility, e-commerce, and AdTech.
                 </p>
                 <p>
-                  Her current work centers on privacy-first Chrome AI
-                  personalization, product architecture, governance, memory and
-                  context handling, and safe use of signals. Alongside Lifaria,
-                  she serves on the TheatreWorks Silicon Valley Board of
-                  Trustees and keeps a weekly bilingual haiku practice.
+                  Across more than two decades, she has worked in startups,
+                  growth-stage companies, and enterprise environments, shaping
+                  product vision, turning ambiguous spaces into durable
+                  strategy, and leading cross-functional teams through growth
+                  and transformation.
                 </p>
-                <div class="bio-points" aria-label="Bio highlights">
-                  <span>Responsible AI</span>
-                  <span>Privacy-first personalization</span>
-                  <span>Product leadership at Google</span>
-                  <span>TheatreWorks trustee</span>
-                  <span>Lifaria, memory, haiku</span>
-                </div>
+                <p>
+                  Her current work centers on privacy-first AI personalization:
+                  product architecture, governance models, memory and context
+                  handling, safe user-signal integration, and the trust
+                  requirements that determine whether intelligent systems
+                  deserve a place in daily life.
+                </p>
+                <p>
+                  Outside the formal product lane, Lana is building Lifaria, a
+                  private Life Book workspace; serves on the TheatreWorks
+                  Silicon Valley Board of Trustees; and keeps a weekly
+                  bilingual haiku practice in English and Russian.
+                </p>
               </div>
-              <aside class="profile-card" aria-label="Profile portrait">
-                <img class="portrait-photo large" src="assets/lana-schuler-linkedin.jpg" alt="Lana Schuler">
-                <strong>Lana Schuler</strong>
-                <p>Product Leadership @ Google</p>
-                <a href="https://www.linkedin.com/in/lana-schuler/" rel="noreferrer">LinkedIn</a>
+              <aside class="bio-aside" aria-label="Bio details">
+                <div>
+                  <h3>Operating range</h3>
+                  <ul>
+                    <li>Responsible AI and privacy-first personalization</li>
+                    <li>Product strategy in regulated or fast-evolving domains</li>
+                    <li>Consumer platforms, content systems, AdTech, and commerce</li>
+                    <li>Cross-functional leadership across product, engineering, research, and operations</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3>Working style</h3>
+                  <ul>
+                    <li>Translate uncertainty into clear product architecture</li>
+                    <li>Balance user value, governance, business performance, and trust</li>
+                    <li>Build teams that can make good decisions under real constraints</li>
+                    <li>Protect the human story inside technical systems</li>
+                  </ul>
+                </div>
+                <a class="text-link" href="https://www.linkedin.com/in/lana-schuler/" rel="noreferrer">LinkedIn profile</a>
               </aside>
             </div>
           </section>
 
           <section class="tab-panel" id="panel-lifaria" role="tabpanel" aria-labelledby="tab-lifaria" tabindex="0" data-panel="lifaria" hidden>
-            <div class="panel-grid">
-              <div class="panel-copy">
-                <p class="eyebrow">Evolving beta product</p>
-                <h2>Lifaria is a Life Book workspace for source-backed memory.</h2>
+            <div class="product-intro">
+              <div>
+                <p class="kicker">Lifaria beta</p>
+                <h2>A Life Book workspace for source-backed memory.</h2>
                 <p>
-                  It turns selected photos, notes, documents, and voice into
-                  moments, eras, and chapters you can approve. The product is
-                  intentionally intimate: biography first, AI second.
+                  Lifaria turns selected photos, notes, files, and voice into
+                  meaningful moments, eras, and chapters. It is a biography
+                  tool with AI in service of the person, not a system that
+                  claims the story for itself.
                 </p>
-                <div class="path-row" aria-label="Life Book path">
-                  <span>Sources</span>
-                  <span>Moments</span>
-                  <span>Eras</span>
-                  <span>Chapters</span>
-                </div>
               </div>
-              <div class="preview-pair" aria-label="Lifaria app screens">
+              <img class="lifaria-wordmark" src="assets/lifaria-wordmark-transparent.png" alt="Lifaria">
+            </div>
+
+            <div class="product-grid">
+              <article>
+                <span>Source-backed</span>
+                <h3>Every claim keeps a trail</h3>
+                <p>Moments and chapters stay connected to the photos, files, notes, or memories that support them.</p>
+              </article>
+              <article>
+                <span>Human approval</span>
+                <h3>AI proposes; the person decides</h3>
+                <p>Lifaria is designed around review, acceptance, editing, and ownership rather than automatic biography.</p>
+              </article>
+              <article>
+                <span>Private by posture</span>
+                <h3>Memory deserves restraint</h3>
+                <p>The product direction favors consent, inspection, and personal control over extraction or spectacle.</p>
+              </article>
+              <article>
+                <span>Life structure</span>
+                <h3>Fragments become chapters</h3>
+                <p>Sources become moments; moments suggest eras; eras can become a Life Book with a coherent spine.</p>
+              </article>
+            </div>
+
+            <div class="screen-showcase" aria-label="Lifaria app screens">
+              <figure class="phone-card">
                 <div class="phone-shell">
                   <img src="assets/screens/life-overview.webp" alt="Lifaria Life Book overview screen">
                 </div>
-                <div class="phone-shell offset-phone">
-                  <img src="assets/screens/moment-detail.webp" alt="Lifaria moment evidence screen">
+                <figcaption>Life Book overview</figcaption>
+              </figure>
+              <figure class="phone-card">
+                <div class="phone-shell">
+                  <img src="assets/screens/choose-sources.webp" alt="Lifaria source selection screen">
                 </div>
-              </div>
+                <figcaption>Source selection</figcaption>
+              </figure>
+              <figure class="phone-card">
+                <div class="phone-shell">
+                  <img src="assets/screens/moment-detail.webp" alt="Lifaria moment detail screen">
+                </div>
+                <figcaption>Moment evidence</figcaption>
+              </figure>
             </div>
           </section>
 
-          <section class="tab-panel" id="panel-hobbies" role="tabpanel" aria-labelledby="tab-hobbies" tabindex="0" data-panel="hobbies" hidden>
-            <div class="panel-copy wide-copy">
-              <p class="eyebrow">Hobbies</p>
-              <h2>Theatre notes, forest walks, poems, and story-gathering.</h2>
-              <p>
-                Hobbies here are not side quests. They are the creative field
-                notes that feed the product: live performance, poetic discipline,
-                walks, symbols, and the small rituals that keep attention alive.
-              </p>
+          <section class="tab-panel" id="panel-theatre" role="tabpanel" aria-labelledby="tab-theatre" tabindex="0" data-panel="theatre" hidden>
+            <div class="panel-heading">
+              <p class="kicker">TheatreWorks / practice</p>
+              <h2>Live performance as a discipline of attention.</h2>
             </div>
-            <div class="theatre-board" aria-label="TheatreWorks board">
-              <article>
-                <span>Watchlist</span>
-                <h3>TheatreWorks board</h3>
-                <p>Board service, seasons to track, and new work that feels worth following.</p>
-              </article>
-              <article>
-                <span>After-show notes</span>
-                <h3>What lingered</h3>
-                <p>Best line, strongest scene, design choice, emotional residue.</p>
-              </article>
-              <article>
-                <span>Patterns</span>
-                <h3>Why it worked</h3>
-                <p>Pacing, structure, character pressure, and the moment the room changed.</p>
-              </article>
-            </div>
-            <div class="hobby-grid">
-              <article>
-                <h3>Weekly haiku</h3>
-                <p>A one-year bilingual ritual of noticing: nature, luck, longing, work, and ordinary magic.</p>
-                <a href="#haiku" data-tab-link="haiku">Open the archive</a>
-              </article>
-              <article>
-                <h3>Forest bathing</h3>
-                <p>A recurring theme in the poems: moss, trees, breath, and letting the nervous system unclench.</p>
-              </article>
-              <article>
-                <h3>Story archaeology</h3>
-                <p>The same instinct behind Lifaria: finding shape in fragments without flattening the life inside them.</p>
-              </article>
+            <div class="essay-layout">
+              <div class="lead-copy">
+                <p>
+                  Lana serves on the TheatreWorks Silicon Valley Board of
+                  Trustees, supporting the organization’s mission, long-term
+                  sustainability, and community role. The work brings product
+                  and technology judgment into a cultural setting where the
+                  measure is not only efficiency, but resonance.
+                </p>
+                <p>
+                  Theatre sharpens the same instincts required in product
+                  leadership: pacing, stakes, audience trust, emotional truth,
+                  and the courage to revise until the room changes.
+                </p>
+              </div>
+              <div class="practice-grid">
+                <article>
+                  <span>Board service</span>
+                  <h3>Stewardship</h3>
+                  <p>Strategy, sustainability, community relevance, and support for new work.</p>
+                </article>
+                <article>
+                  <span>Product lens</span>
+                  <h3>Audience trust</h3>
+                  <p>How a room grants attention, when it withdraws it, and what earns it back.</p>
+                </article>
+                <article>
+                  <span>Notebook</span>
+                  <h3>After-show thinking</h3>
+                  <p>Best line, strongest scene, design choice, emotional residue, and structure under pressure.</p>
+                </article>
+                <article>
+                  <span>Creative life</span>
+                  <h3>Practice, not performance</h3>
+                  <p>Haiku, theatre, forest walks, and story-gathering as ways to keep perception precise.</p>
+                </article>
+              </div>
             </div>
           </section>
 
           <section class="tab-panel" id="panel-haiku" role="tabpanel" aria-labelledby="tab-haiku" tabindex="0" data-panel="haiku" hidden>
-            <div class="haiku-layout">
-              <div class="panel-copy">
-                <p class="eyebrow">Weekly haiku</p>
-                <h2>A bilingual year of ordinary magic.</h2>
+            <div class="haiku-intro">
+              <div>
+                <p class="kicker">Weekly haiku</p>
+                <h2>A year of bilingual attention.</h2>
                 <p>
-                  Fifty-two weekly poems, moving from sakura and dragonflies
-                  through synchronicity, forest bathing, Lifaria, and luck.
+                  The haiku archive is a weekly practice of noticing: nature,
+                  luck, fatigue, synchronicity, ritual, and the ordinary
+                  details that become visible when language is kept small.
                 </p>
-                <blockquote class="featured-haiku">
-                  <span>June 26th - 52nd</span>
-                  <p>Fortune finds the door!<br>Luck pours in and stays for good.<br>River finds the sea!</p>
-                </blockquote>
               </div>
-              <div class="haiku-browser">
-                <label for="haiku-filter">Filter the year</label>
-                <input id="haiku-filter" type="search" placeholder="Try forest, luck, Lifaria, sakura...">
-                <div class="haiku-count" id="haiku-count">Loading haiku archive...</div>
-                <div class="haiku-archive" id="haiku-archive" aria-live="polite"></div>
-              </div>
+              <blockquote class="featured-haiku">
+                <span>June 26th - 52nd</span>
+                <p>Fortune finds the door!<br>Luck pours in and stays for good.<br>River finds the sea!</p>
+              </blockquote>
             </div>
+
+            <div class="haiku-tools">
+              <label for="haiku-filter">Filter the archive</label>
+              <input id="haiku-filter" type="search" placeholder="Search image, season, theme">
+              <div class="haiku-count" id="haiku-count">Loading haiku archive...</div>
+            </div>
+            <div class="haiku-archive" id="haiku-archive" aria-live="polite"></div>
           </section>
 
           <section class="tab-panel" id="panel-blog" role="tabpanel" aria-labelledby="tab-blog" tabindex="0" data-panel="blog" hidden>
-            <div class="panel-copy wide-copy">
-              <p class="eyebrow">Blog</p>
-              <h2>Field notes from Lifaria, theatre, and the haiku year.</h2>
-              <p>
-                A lightweight blog shelf for early essays and notes. The first
-                posts can grow from what is already here.
-              </p>
+            <div class="panel-heading">
+              <p class="kicker">Blog</p>
+              <h2>Essays to grow from the work already underway.</h2>
             </div>
             <div class="blog-grid">
               <article>
-                <span>Draft</span>
-                <h3>Building a Life Book without stealing the life from it</h3>
-                <p>Why Lifaria keeps source evidence, approval, and ownership close to every AI step.</p>
+                <span>Responsible AI</span>
+                <h3>Memory boundaries are product boundaries</h3>
+                <p>Why personalization systems need explicit choices about what they remember, forget, infer, and expose.</p>
               </article>
               <article>
-                <span>Draft</span>
-                <h3>What theatre teaches product builders</h3>
-                <p>Scenes, pacing, emotional truth, and the subtle contract between audience and maker.</p>
+                <span>Lifaria</span>
+                <h3>The Life Book as consent architecture</h3>
+                <p>How a biography tool can keep sources, approvals, and edits close to every generated chapter.</p>
               </article>
               <article>
-                <span>Draft</span>
-                <h3>One year, fifty-two haiku</h3>
-                <p>How a small weekly poem turns ordinary time into a map you can reread.</p>
+                <span>Theatre</span>
+                <h3>What product teams can learn from rehearsal</h3>
+                <p>Iteration, timing, audience trust, and the difference between a correct answer and a living one.</p>
+              </article>
+              <article>
+                <span>Haiku</span>
+                <h3>A small poem as a weekly operating system</h3>
+                <p>How constraint turns attention into a practice rather than a mood.</p>
+              </article>
+              <article>
+                <span>Leadership</span>
+                <h3>Operating in ambiguity without worshiping it</h3>
+                <p>How to make progress when the system is changing, the stakes are real, and certainty would be premature.</p>
               </article>
             </div>
           </section>
@@ -298,7 +371,7 @@
 
     <footer class="site-footer">
       <span>Lana Schuler</span>
-      <span>Lifaria beta / notes / weekly haiku</span>
+      <span>Product leadership · Lifaria beta · theatre · weekly haiku</span>
       <a href="mailto:hello@lifaria.com">hello@lifaria.com</a>
     </footer>
   </body>
