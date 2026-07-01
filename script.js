@@ -1,7 +1,10 @@
-const tabs = Array.from(document.querySelectorAll("[role='tab'][data-tab]"));
-const panels = Array.from(document.querySelectorAll("[role='tabpanel'][data-panel]"));
+const tabControls = Array.from(document.querySelectorAll("[role='tab'][data-tab]"));
+const panels = Array.from(document.querySelectorAll("[data-panel]"));
 const tabLinks = Array.from(document.querySelectorAll("[data-tab-link]"));
-const knownTabs = new Set(tabs.map((tab) => tab.dataset.tab));
+const sectionLinks = Array.from(
+  document.querySelectorAll(".site-nav [data-tab-link], .brand-lockup[data-tab-link]"),
+);
+const knownTabs = new Set(panels.map((panel) => panel.dataset.panel));
 const haikuArchive = document.querySelector("#haiku-archive");
 const haikuFilter = document.querySelector("#haiku-filter");
 const haikuCount = document.querySelector("#haiku-count");
@@ -24,10 +27,18 @@ let haikuEntries = [];
 function activateTab(tabId, options = {}) {
   if (!knownTabs.has(tabId)) return;
 
-  tabs.forEach((tab) => {
+  tabControls.forEach((tab) => {
     const isSelected = tab.dataset.tab === tabId;
     tab.setAttribute("aria-selected", String(isSelected));
     tab.tabIndex = isSelected ? 0 : -1;
+  });
+
+  sectionLinks.forEach((link) => {
+    if (link.dataset.tabLink === tabId) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
   });
 
   panels.forEach((panel) => {
@@ -180,28 +191,28 @@ River finds the sea!</pre>
   }
 }
 
-tabs.forEach((tab, index) => {
+tabControls.forEach((tab, index) => {
   tab.addEventListener("click", () => activateTab(tab.dataset.tab));
 
   tab.addEventListener("keydown", (event) => {
-    const currentIndex = tabs.indexOf(tab);
+    const currentIndex = tabControls.indexOf(tab);
     let nextIndex = currentIndex;
 
     if (event.key === "ArrowRight" || event.key === "ArrowDown") {
-      nextIndex = (currentIndex + 1) % tabs.length;
+      nextIndex = (currentIndex + 1) % tabControls.length;
     } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
-      nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+      nextIndex = (currentIndex - 1 + tabControls.length) % tabControls.length;
     } else if (event.key === "Home") {
       nextIndex = 0;
     } else if (event.key === "End") {
-      nextIndex = tabs.length - 1;
+      nextIndex = tabControls.length - 1;
     } else {
       return;
     }
 
     event.preventDefault();
-    tabs[nextIndex].focus();
-    activateTab(tabs[nextIndex].dataset.tab);
+    tabControls[nextIndex].focus();
+    activateTab(tabControls[nextIndex].dataset.tab);
   });
 
   tab.tabIndex = index === 0 ? 0 : -1;
@@ -217,7 +228,7 @@ tabLinks.forEach((link) => {
 
     const target = link.classList.contains("brand-lockup")
       ? document.querySelector("#main")
-      : document.querySelector(".tab-section");
+      : document.querySelector(`[data-panel="${tabId}"]`) || document.querySelector(".tab-section");
     target?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 });
