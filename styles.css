@@ -303,6 +303,16 @@ p {
   font-weight: 700;
 }
 
+.portrait-photo {
+  width: min(230px, 54vw);
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid rgba(16, 38, 54, 0.16);
+  border-radius: 50%;
+  box-shadow: var(--shadow-strong);
+}
+
 .workspace {
   display: grid;
   grid-template-columns: minmax(220px, 300px) minmax(0, 1fr);
@@ -497,6 +507,10 @@ p {
 }
 
 .portrait-placeholder.large {
+  width: min(260px, 100%);
+}
+
+.portrait-photo.large {
   width: min(260px, 100%);
 }
 
@@ -717,7 +731,8 @@ p {
     align-items: center;
   }
 
-  .portrait-placeholder {
+  .portrait-placeholder,
+  .portrait-photo {
     width: 170px;
   }
 
@@ -841,7 +856,8 @@ p {
     padding: 20px;
   }
 
-  .portrait-placeholder {
+  .portrait-placeholder,
+  .portrait-photo {
     width: 132px;
   }
 
