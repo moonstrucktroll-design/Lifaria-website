@@ -215,14 +215,13 @@ li + li {
   gap: 68px;
   align-items: center;
   width: min(var(--max-page), calc(100% - 44px));
-  min-height: 620px;
+  min-height: 560px;
   margin: 0 auto;
-  padding: 52px 0 42px;
+  padding: 72px 0 46px;
 }
 
-.hero-wordmark {
-  width: min(620px, 100%);
-  margin: 0 0 26px;
+.hero-copy {
+  max-width: 800px;
 }
 
 .kicker {
@@ -544,10 +543,29 @@ li + li {
   border-bottom: 1px solid var(--line);
 }
 
-.lifaria-wordmark {
-  width: min(360px, 100%);
+.product-note {
+  display: grid;
+  gap: 12px;
   align-self: center;
   justify-self: end;
+  max-width: 340px;
+  padding: 24px;
+  background: rgba(255, 253, 247, 0.68);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.product-note span {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 760;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.product-note p {
+  color: var(--muted);
+  font-size: 1rem;
 }
 
 .product-grid {
@@ -806,7 +824,7 @@ li + li {
     gap: 8px;
   }
 
-  .lifaria-wordmark {
+  .product-note {
     justify-self: start;
   }
 
@@ -887,11 +905,6 @@ li + li {
 
   .brand-wordmark {
     width: 136px;
-  }
-
-  .hero-wordmark {
-    width: min(330px, 100%);
-    margin-bottom: 18px;
   }
 
   .site-nav .nav-cta {
