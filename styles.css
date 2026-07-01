@@ -199,16 +199,6 @@ p {
   overflow: hidden;
 }
 
-.hero-panel::before {
-  content: "";
-  position: absolute;
-  inset: 10% auto 8% 48%;
-  width: min(610px, 48vw);
-  border: 1px solid rgba(184, 145, 79, 0.22);
-  border-radius: 999px;
-  transform: rotate(-12deg);
-}
-
 .hero-copy,
 .hero-showcase {
   position: relative;
@@ -702,12 +692,6 @@ p {
     grid-template-columns: 1fr;
     min-height: 0;
     padding-top: 32px;
-  }
-
-  .hero-panel::before {
-    inset: auto 8% 8% auto;
-    width: 70vw;
-    height: 34vw;
   }
 
   .brand-plate {
