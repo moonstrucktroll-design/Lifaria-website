@@ -377,16 +377,13 @@ li + li {
 }
 
 .panel-heading {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: 44px;
-  align-items: start;
   margin-bottom: 34px;
   padding-bottom: 34px;
   border-bottom: 1px solid var(--line);
 }
 
 .panel-heading h2 {
+  max-width: 920px;
   margin-bottom: 0;
 }
 
@@ -775,11 +772,6 @@ li + li {
 
   .signal-strip div:last-child {
     border-bottom: 0;
-  }
-
-  .panel-heading {
-    grid-template-columns: 1fr;
-    gap: 8px;
   }
 
   .product-note {
