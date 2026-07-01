@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lifaria | Private Life Book workspace</title>
+    <title>Svetlana Schuler | Lifaria, writing, haiku</title>
     <meta
       name="description"
-      content="Lifaria is a private Life Book workspace that turns scattered life material into source-backed moments, eras, and chapters you approve."
+      content="Personal website for Svetlana Schuler: Lifaria beta, short bio, TheatreWorks notes, weekly haiku, and blog drafts."
     >
-    <meta property="og:title" content="Lifaria">
+    <meta property="og:title" content="Svetlana Schuler">
     <meta
       property="og:description"
-      content="Every life deserves a book. Lifaria helps turn photos, notes, files, and voice into an owned personal biography."
+      content="A personal home for Lifaria, writing, theatre notes, and a year of weekly haiku."
     >
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/lifaria-logo.png">
@@ -25,90 +25,156 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header class="site-header" aria-label="Site header">
-      <a class="brand-lockup" href="#overview" aria-label="Lifaria home" data-tab-link="overview">
-        <span class="brand-glow" aria-hidden="true"></span>
-        <img src="assets/lifaria-wordmark-transparent.png" alt="Lifaria">
+      <a class="brand-lockup" href="#home" aria-label="Svetlana Schuler home" data-tab-link="home">
+        <span class="brand-name">Svetlana Schuler</span>
+        <span class="brand-subtitle">Lifaria / notes / haiku</span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
-        <a href="#life-book" data-tab-link="life-book">Life Book</a>
-        <a href="#review" data-tab-link="review">Evidence</a>
-        <a href="#privacy" data-tab-link="privacy">Privacy</a>
-        <a class="nav-cta" href="mailto:hello@lifaria.com?subject=Lifaria%20early%20access">Early access</a>
+        <a href="#bio" data-tab-link="bio">Bio</a>
+        <a href="#lifaria" data-tab-link="lifaria">Lifaria</a>
+        <a href="#hobbies" data-tab-link="hobbies">Hobbies</a>
+        <a href="#blog" data-tab-link="blog">Blog</a>
+        <a class="nav-cta" href="mailto:hello@lifaria.com?subject=Hello%20Svetlana">Contact</a>
       </nav>
     </header>
 
     <main id="main">
       <section class="hero-panel" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <div class="brand-plate" aria-label="Lifaria">
-            <img src="assets/lifaria-wordmark-transparent.png" alt="">
-          </div>
-          <p class="eyebrow">Life Book beta</p>
-          <h1 id="hero-title">Every life deserves a book.</h1>
+          <p class="eyebrow">Personal site / Lifaria beta</p>
+          <h1 id="hero-title">Svetlana Schuler</h1>
           <p class="hero-text">
-            Lifaria turns photos, notes, documents, and voice into a private,
-            source-backed Life Book that stays in your hands.
+            I build story-shaped software, write weekly haiku, keep a theatre
+            notebook, and am shaping Lifaria into a private Life Book for real
+            people and their source-backed memories.
           </p>
           <div class="hero-actions" aria-label="Primary actions">
-            <a class="button primary" href="mailto:hello@lifaria.com?subject=Lifaria%20early%20access">Request early access</a>
-            <a class="button secondary" href="#life-book" data-tab-link="life-book">Open Life Book</a>
+            <a class="button primary" href="#bio" data-tab-link="bio">Read bio</a>
+            <a class="button secondary" href="#lifaria" data-tab-link="lifaria">Open Lifaria</a>
           </div>
         </div>
 
-        <div class="hero-showcase" aria-label="Lifaria app preview">
-          <div class="phone-shell hero-phone">
-            <img src="assets/screens/life-overview.webp" alt="Lifaria Life Book overview screen">
+        <aside class="identity-card" aria-label="Svetlana Schuler profile">
+          <div class="portrait-placeholder" aria-hidden="true">
+            <span>SS</span>
           </div>
-          <div class="source-card card-top">
-            <strong>Sources</strong>
-            <span>Photos, files, notes, voice</span>
+          <div>
+            <p class="eyebrow">Current center</p>
+            <h2>Lifaria, memory, theatre, poems.</h2>
+            <p>
+              A compact map of what I am building, watching, writing, and
+              learning in public.
+            </p>
           </div>
-          <div class="source-card card-bottom">
-            <strong>Chapters</strong>
-            <span>Drafted from approved moments</span>
-          </div>
-        </div>
+        </aside>
       </section>
 
-      <section class="workspace" aria-label="Explore Lifaria">
+      <section class="workspace" aria-label="Explore Svetlana Schuler">
         <div class="tab-shell">
           <div class="tab-intro">
-            <span class="tab-kicker">Explore the product</span>
-            <h2>Choose a view.</h2>
+            <span class="tab-kicker">Explore</span>
+            <h2>Choose a tab.</h2>
           </div>
 
-          <div class="tab-list" role="tablist" aria-label="Lifaria product views">
-            <button class="tab-button" id="tab-overview" type="button" role="tab" aria-controls="panel-overview" aria-selected="true" data-tab="overview">
-              Overview
+          <div class="tab-list" role="tablist" aria-label="Website sections">
+            <button class="tab-button" id="tab-home" type="button" role="tab" aria-controls="panel-home" aria-selected="true" data-tab="home">
+              Home
             </button>
-            <button class="tab-button" id="tab-life-book" type="button" role="tab" aria-controls="panel-life-book" aria-selected="false" data-tab="life-book">
-              Life Book
+            <button class="tab-button" id="tab-bio" type="button" role="tab" aria-controls="panel-bio" aria-selected="false" data-tab="bio">
+              Bio
             </button>
-            <button class="tab-button" id="tab-sources" type="button" role="tab" aria-controls="panel-sources" aria-selected="false" data-tab="sources">
-              Sources
+            <button class="tab-button" id="tab-lifaria" type="button" role="tab" aria-controls="panel-lifaria" aria-selected="false" data-tab="lifaria">
+              Lifaria
             </button>
-            <button class="tab-button" id="tab-review" type="button" role="tab" aria-controls="panel-review" aria-selected="false" data-tab="review">
-              Review
+            <button class="tab-button" id="tab-hobbies" type="button" role="tab" aria-controls="panel-hobbies" aria-selected="false" data-tab="hobbies">
+              Hobbies
             </button>
-            <button class="tab-button" id="tab-privacy" type="button" role="tab" aria-controls="panel-privacy" aria-selected="false" data-tab="privacy">
-              Privacy
+            <button class="tab-button" id="tab-haiku" type="button" role="tab" aria-controls="panel-haiku" aria-selected="false" data-tab="haiku">
+              Haiku
             </button>
-            <button class="tab-button" id="tab-beta" type="button" role="tab" aria-controls="panel-beta" aria-selected="false" data-tab="beta">
-              Beta
+            <button class="tab-button" id="tab-blog" type="button" role="tab" aria-controls="panel-blog" aria-selected="false" data-tab="blog">
+              Blog
             </button>
           </div>
         </div>
 
         <div class="tab-panels">
-          <section class="tab-panel" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview" tabindex="0" data-panel="overview">
+          <section class="tab-panel" id="panel-home" role="tabpanel" aria-labelledby="tab-home" tabindex="0" data-panel="home">
+            <div class="home-grid">
+              <article class="home-card large-card">
+                <p class="eyebrow">Home base</p>
+                <h2>A personal site with Lifaria at the center, not the whole room.</h2>
+                <p>
+                  This space collects the product work, the creative practice,
+                  the theatre notes, and the weekly poems into one navigable
+                  place.
+                </p>
+              </article>
+              <article class="home-card accent-blue">
+                <span>Beta product</span>
+                <h3>Lifaria</h3>
+                <p>A private Life Book workspace for source-backed biography.</p>
+              </article>
+              <article class="home-card accent-sage">
+                <span>Ritual</span>
+                <h3>52 weekly haiku</h3>
+                <p>A bilingual year of small observations, ordinary magic, and weather.</p>
+              </article>
+              <article class="home-card accent-rose">
+                <span>Notebook</span>
+                <h3>TheatreWorks board</h3>
+                <p>A place for watchlists, performance notes, and after-show reflections.</p>
+              </article>
+              <article class="home-card accent-gold">
+                <span>Writing</span>
+                <h3>Blog drafts</h3>
+                <p>Short essays on AI, memory, theater, poetry, and building in public.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="tab-panel" id="panel-bio" role="tabpanel" aria-labelledby="tab-bio" tabindex="0" data-panel="bio" hidden>
+            <div class="panel-grid bio-grid">
+              <div class="panel-copy">
+                <p class="eyebrow">Short bio</p>
+                <h2>Builder, storyteller, and keeper of small rituals.</h2>
+                <p>
+                  Svetlana Schuler is building Lifaria, a private biography
+                  workspace for turning scattered life material into a Life Book
+                  people can inspect, shape, and own. Her work sits where
+                  product thinking, AI, memory, and narrative craft meet.
+                </p>
+                <p>
+                  Away from product work, she keeps a TheatreWorks board, writes
+                  weekly haiku in English and Russian, and follows the everyday
+                  magic hidden in ordinary days.
+                </p>
+                <div class="bio-points" aria-label="Bio highlights">
+                  <span>Product and narrative systems</span>
+                  <span>AI with consent and provenance</span>
+                  <span>Poetry, theatre, memory</span>
+                </div>
+              </div>
+              <aside class="profile-card" aria-label="Profile portrait">
+                <div class="portrait-placeholder large" aria-hidden="true">
+                  <span>SS</span>
+                </div>
+                <strong>Svetlana Schuler</strong>
+                <p>Lifaria beta creator</p>
+                <a href="https://www.linkedin.com/" rel="noreferrer">LinkedIn</a>
+              </aside>
+            </div>
+          </section>
+
+          <section class="tab-panel" id="panel-lifaria" role="tabpanel" aria-labelledby="tab-lifaria" tabindex="0" data-panel="lifaria" hidden>
             <div class="panel-grid">
               <div class="panel-copy">
-                <p class="eyebrow">Private biography workspace</p>
-                <h2>Life material becomes a story you can inspect.</h2>
+                <p class="eyebrow">Evolving beta product</p>
+                <h2>Lifaria is a Life Book workspace for source-backed memory.</h2>
                 <p>
-                  Lifaria gathers the fragments that already hold a life and
-                  organizes them into moments, eras, and chapters without taking
-                  judgment away from the person whose story it is.
+                  It turns selected photos, notes, documents, and voice into
+                  moments, eras, and chapters you can approve. The product is
+                  intentionally intimate: biography first, AI second.
                 </p>
                 <div class="path-row" aria-label="Life Book path">
                   <span>Sources</span>
@@ -117,104 +183,9 @@
                   <span>Chapters</span>
                 </div>
               </div>
-              <div class="preview-pair" aria-label="Overview screens">
+              <div class="preview-pair" aria-label="Lifaria app screens">
                 <div class="phone-shell">
                   <img src="assets/screens/life-overview.webp" alt="Lifaria Life Book overview screen">
-                </div>
-                <div class="mini-panel">
-                  <span>The promise</span>
-                  <strong>AI can suggest structure. You decide what becomes official.</strong>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="tab-panel" id="panel-life-book" role="tabpanel" aria-labelledby="tab-life-book" tabindex="0" data-panel="life-book" hidden>
-            <div class="panel-grid">
-              <div class="panel-copy">
-                <p class="eyebrow">Life Book</p>
-                <h2>A book-shaped workspace for a real life.</h2>
-                <p>
-                  Build from a living table of contents: accepted moments,
-                  remembered places, important people, and eras that can be
-                  renamed until they feel true.
-                </p>
-                <div class="feature-grid compact">
-                  <article>
-                    <span>01</span>
-                    <h3>Choose a format</h3>
-                    <p>Start with an individual Life Book, then grow into future book types.</p>
-                  </article>
-                  <article>
-                    <span>02</span>
-                    <h3>Shape chapters</h3>
-                    <p>Move from eras into editable chapter drafts without losing provenance.</p>
-                  </article>
-                </div>
-              </div>
-              <div class="stacked-preview" aria-label="Life Book screens">
-                <img src="assets/screens/book-choice.webp" alt="Lifaria book format screen">
-                <img src="assets/screens/chapter-board.webp" alt="Lifaria chapter board screen">
-              </div>
-            </div>
-          </section>
-
-          <section class="tab-panel" id="panel-sources" role="tabpanel" aria-labelledby="tab-sources" tabindex="0" data-panel="sources" hidden>
-            <div class="panel-grid">
-              <div class="panel-copy">
-                <p class="eyebrow">Sources</p>
-                <h2>Begin with what you trust Lifaria to read.</h2>
-                <p>
-                  The beta starts with selected uploads and notes. Later
-                  connections can be added deliberately, source by source, with
-                  the same review-first model.
-                </p>
-                <div class="source-list" aria-label="Supported source types">
-                  <span>Photos</span>
-                  <span>Scans</span>
-                  <span>Journals</span>
-                  <span>Files</span>
-                  <span>Voice</span>
-                  <span>Captions</span>
-                </div>
-              </div>
-              <div class="preview-pair" aria-label="Source screens">
-                <div class="phone-shell">
-                  <img src="assets/screens/choose-sources.webp" alt="Lifaria source picker screen">
-                </div>
-                <div class="phone-shell offset-phone">
-                  <img src="assets/screens/source-controls.webp" alt="Lifaria source controls screen">
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="tab-panel" id="panel-review" role="tabpanel" aria-labelledby="tab-review" tabindex="0" data-panel="review" hidden>
-            <div class="panel-grid">
-              <div class="panel-copy">
-                <p class="eyebrow">Evidence review</p>
-                <h2>Every proposed memory keeps its receipts.</h2>
-                <p>
-                  Lifaria can surface meaningful moments, but the app keeps the
-                  supporting clues close: source clusters, dates, places, themes,
-                  and narrative signals remain visible before acceptance.
-                </p>
-                <div class="feature-grid compact">
-                  <article>
-                    <span>Accept</span>
-                    <h3>Keep what rings true</h3>
-                    <p>Approved moments can move into eras and chapter drafts.</p>
-                  </article>
-                  <article>
-                    <span>Revise</span>
-                    <h3>Rewrite the meaning</h3>
-                    <p>Names, dates, emphasis, and interpretation stay editable.</p>
-                  </article>
-                </div>
-              </div>
-              <div class="preview-pair" aria-label="Review screens">
-                <div class="phone-shell">
-                  <img src="assets/screens/moments-list.webp" alt="Lifaria meaningful moments review screen">
                 </div>
                 <div class="phone-shell offset-phone">
                   <img src="assets/screens/moment-detail.webp" alt="Lifaria moment evidence screen">
@@ -223,54 +194,98 @@
             </div>
           </section>
 
-          <section class="tab-panel" id="panel-privacy" role="tabpanel" aria-labelledby="tab-privacy" tabindex="0" data-panel="privacy" hidden>
-            <div class="panel-grid trust-grid">
+          <section class="tab-panel" id="panel-hobbies" role="tabpanel" aria-labelledby="tab-hobbies" tabindex="0" data-panel="hobbies" hidden>
+            <div class="panel-copy wide-copy">
+              <p class="eyebrow">Hobbies</p>
+              <h2>Theatre notes, forest walks, poems, and story-gathering.</h2>
+              <p>
+                Hobbies here are not side quests. They are the creative field
+                notes that feed the product: live performance, poetic discipline,
+                walks, symbols, and the small rituals that keep attention alive.
+              </p>
+            </div>
+            <div class="theatre-board" aria-label="TheatreWorks board">
+              <article>
+                <span>Watchlist</span>
+                <h3>TheatreWorks board</h3>
+                <p>Shows to see, seasons to track, and new work that feels worth following.</p>
+              </article>
+              <article>
+                <span>After-show notes</span>
+                <h3>What lingered</h3>
+                <p>Best line, strongest scene, design choice, emotional residue.</p>
+              </article>
+              <article>
+                <span>Patterns</span>
+                <h3>Why it worked</h3>
+                <p>Pacing, structure, character pressure, and the moment the room changed.</p>
+              </article>
+            </div>
+            <div class="hobby-grid">
+              <article>
+                <h3>Weekly haiku</h3>
+                <p>A one-year bilingual ritual of noticing: nature, luck, longing, work, and ordinary magic.</p>
+                <a href="#haiku" data-tab-link="haiku">Open the archive</a>
+              </article>
+              <article>
+                <h3>Forest bathing</h3>
+                <p>A recurring theme in the poems: moss, trees, breath, and letting the nervous system unclench.</p>
+              </article>
+              <article>
+                <h3>Story archaeology</h3>
+                <p>The same instinct behind Lifaria: finding shape in fragments without flattening the life inside them.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="tab-panel" id="panel-haiku" role="tabpanel" aria-labelledby="tab-haiku" tabindex="0" data-panel="haiku" hidden>
+            <div class="haiku-layout">
               <div class="panel-copy">
-                <p class="eyebrow">Trust model</p>
-                <h2>Biography first, AI second.</h2>
+                <p class="eyebrow">Weekly haiku</p>
+                <h2>A bilingual year of ordinary magic.</h2>
                 <p>
-                  Lifaria treats privacy, consent, and ownership as core product
-                  features. The goal is not to automate your life story away
-                  from you. It is to help you find the shape and stay in charge.
+                  Fifty-two weekly poems, moving from sakura and dragonflies
+                  through synchronicity, forest bathing, Lifaria, and luck.
                 </p>
+                <blockquote class="featured-haiku">
+                  <span>June 26th - 52nd</span>
+                  <p>Fortune finds the door!<br>Luck pours in and stays for good.<br>River finds the sea!</p>
+                </blockquote>
               </div>
-              <div class="feature-grid trust-cards">
-                <article>
-                  <span>Private</span>
-                  <h3>Nothing becomes public by default</h3>
-                  <p>No source, moment, chapter, invite, or export is shared without action.</p>
-                </article>
-                <article>
-                  <span>Grounded</span>
-                  <h3>Interpretation stays tied to evidence</h3>
-                  <p>Suggested memories remain connected to the source signals that created them.</p>
-                </article>
-                <article>
-                  <span>Owned</span>
-                  <h3>The book belongs to you</h3>
-                  <p>Accept, reject, rename, rewrite, reorder, and export on your terms.</p>
-                </article>
-                <article>
-                  <span>Manual</span>
-                  <h3>Sensitive work can stay restrained</h3>
-                  <p>Limit AI to organizing, sequencing, tagging, and deduplicating.</p>
-                </article>
+              <div class="haiku-browser">
+                <label for="haiku-filter">Filter the year</label>
+                <input id="haiku-filter" type="search" placeholder="Try forest, luck, Lifaria, sakura...">
+                <div class="haiku-count" id="haiku-count">Loading haiku archive...</div>
+                <div class="haiku-archive" id="haiku-archive" aria-live="polite"></div>
               </div>
             </div>
           </section>
 
-          <section class="tab-panel beta-panel" id="panel-beta" role="tabpanel" aria-labelledby="tab-beta" tabindex="0" data-panel="beta" hidden>
-            <div class="beta-card">
-              <div class="beta-mark">
-                <img src="assets/lifaria-wordmark-transparent.png" alt="Lifaria">
-              </div>
-              <p class="eyebrow">Lifaria beta</p>
-              <h2>Build a book while you are still living the story.</h2>
+          <section class="tab-panel" id="panel-blog" role="tabpanel" aria-labelledby="tab-blog" tabindex="0" data-panel="blog" hidden>
+            <div class="panel-copy wide-copy">
+              <p class="eyebrow">Blog</p>
+              <h2>Field notes from Lifaria, theatre, and the haiku year.</h2>
               <p>
-                Lifaria is for people who want to preserve, understand, and
-                shape a life story from the material they already have.
+                A lightweight blog shelf for early essays and notes. The first
+                posts can grow from what is already here.
               </p>
-              <a class="button primary" href="mailto:hello@lifaria.com?subject=Lifaria%20early%20access">Request early access</a>
+            </div>
+            <div class="blog-grid">
+              <article>
+                <span>Draft</span>
+                <h3>Building a Life Book without stealing the life from it</h3>
+                <p>Why Lifaria keeps source evidence, approval, and ownership close to every AI step.</p>
+              </article>
+              <article>
+                <span>Draft</span>
+                <h3>What theatre teaches product builders</h3>
+                <p>Scenes, pacing, emotional truth, and the subtle contract between audience and maker.</p>
+              </article>
+              <article>
+                <span>Draft</span>
+                <h3>One year, fifty-two haiku</h3>
+                <p>How a small weekly poem turns ordinary time into a map you can reread.</p>
+              </article>
             </div>
           </section>
         </div>
@@ -278,8 +293,8 @@
     </main>
 
     <footer class="site-footer">
-      <span>Lifaria</span>
-      <span>Every life deserves a book.</span>
+      <span>Svetlana Schuler</span>
+      <span>Lifaria beta / notes / weekly haiku</span>
       <a href="mailto:hello@lifaria.com">hello@lifaria.com</a>
     </footer>
   </body>
