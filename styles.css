@@ -152,16 +152,14 @@ li + li {
 
 .brand-lockup {
   display: grid;
-  gap: 2px;
-  min-width: 210px;
+  gap: 3px;
+  min-width: 250px;
 }
 
-.brand-name {
-  color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.22rem;
-  font-weight: 700;
-  line-height: 1;
+.brand-wordmark {
+  width: 178px;
+  max-width: 100%;
+  height: auto;
 }
 
 .brand-subtitle {
@@ -218,6 +216,11 @@ li + li {
   min-height: 620px;
   margin: 0 auto;
   padding: 52px 0 42px;
+}
+
+.hero-wordmark {
+  width: min(620px, 100%);
+  margin: 0 0 26px;
 }
 
 .kicker {
@@ -870,15 +873,20 @@ li + li {
   }
 
   .brand-lockup {
-    min-width: 0;
-  }
-
-  .brand-name {
-    font-size: 1.05rem;
+    min-width: 150px;
   }
 
   .brand-subtitle {
     display: none;
+  }
+
+  .brand-wordmark {
+    width: 136px;
+  }
+
+  .hero-wordmark {
+    width: min(330px, 100%);
+    margin-bottom: 18px;
   }
 
   .site-nav .nav-cta {
