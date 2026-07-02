@@ -1,4 +1,3 @@
-const tabControls = Array.from(document.querySelectorAll("[role='tab'][data-tab]"));
 const panels = Array.from(document.querySelectorAll("[data-panel]"));
 const tabLinks = Array.from(document.querySelectorAll("[data-tab-link]"));
 const sectionLinks = Array.from(
@@ -26,12 +25,6 @@ let haikuEntries = [];
 
 function activateTab(tabId, options = {}) {
   if (!knownTabs.has(tabId)) return;
-
-  tabControls.forEach((tab) => {
-    const isSelected = tab.dataset.tab === tabId;
-    tab.setAttribute("aria-selected", String(isSelected));
-    tab.tabIndex = isSelected ? 0 : -1;
-  });
 
   sectionLinks.forEach((link) => {
     if (link.dataset.tabLink === tabId) {
@@ -190,33 +183,6 @@ River finds the sea!</pre>
     `;
   }
 }
-
-tabControls.forEach((tab, index) => {
-  tab.addEventListener("click", () => activateTab(tab.dataset.tab));
-
-  tab.addEventListener("keydown", (event) => {
-    const currentIndex = tabControls.indexOf(tab);
-    let nextIndex = currentIndex;
-
-    if (event.key === "ArrowRight" || event.key === "ArrowDown") {
-      nextIndex = (currentIndex + 1) % tabControls.length;
-    } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
-      nextIndex = (currentIndex - 1 + tabControls.length) % tabControls.length;
-    } else if (event.key === "Home") {
-      nextIndex = 0;
-    } else if (event.key === "End") {
-      nextIndex = tabControls.length - 1;
-    } else {
-      return;
-    }
-
-    event.preventDefault();
-    tabControls[nextIndex].focus();
-    activateTab(tabControls[nextIndex].dataset.tab);
-  });
-
-  tab.tabIndex = index === 0 ? 0 : -1;
-});
 
 tabLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
