@@ -3,6 +3,8 @@ const tabLinks = Array.from(document.querySelectorAll("[data-tab-link]"));
 const sectionLinks = Array.from(
   document.querySelectorAll(".site-nav [data-tab-link], .brand-lockup[data-tab-link]"),
 );
+const bioTabs = Array.from(document.querySelectorAll("[data-bio-tab]"));
+const bioPanels = Array.from(document.querySelectorAll("[data-bio-panel]"));
 const knownTabs = new Set(panels.map((panel) => panel.dataset.panel));
 const haikuArchive = document.querySelector("#haiku-archive");
 const haikuFilter = document.querySelector("#haiku-filter");
@@ -50,6 +52,19 @@ function activateTab(tabId, options = {}) {
 function tabFromHash() {
   const hash = window.location.hash.replace("#", "");
   return knownTabs.has(hash) ? hash : "home";
+}
+
+function activateBioTab(tabId) {
+  bioTabs.forEach((tab) => {
+    const isSelected = tab.dataset.bioTab === tabId;
+    tab.classList.toggle("is-active", isSelected);
+    tab.setAttribute("aria-selected", String(isSelected));
+    tab.tabIndex = isSelected ? 0 : -1;
+  });
+
+  bioPanels.forEach((panel) => {
+    panel.hidden = panel.dataset.bioPanel !== tabId;
+  });
 }
 
 function parseHaikuYear(text) {
@@ -199,6 +214,31 @@ tabLinks.forEach((link) => {
   });
 });
 
+bioTabs.forEach((tab) => {
+  tab.addEventListener("click", () => activateBioTab(tab.dataset.bioTab));
+
+  tab.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+
+    const currentIndex = bioTabs.indexOf(tab);
+    let nextIndex = currentIndex;
+
+    if (event.key === "ArrowRight") {
+      nextIndex = (currentIndex + 1) % bioTabs.length;
+    } else if (event.key === "ArrowLeft") {
+      nextIndex = (currentIndex - 1 + bioTabs.length) % bioTabs.length;
+    } else if (event.key === "Home") {
+      nextIndex = 0;
+    } else if (event.key === "End") {
+      nextIndex = bioTabs.length - 1;
+    }
+
+    event.preventDefault();
+    bioTabs[nextIndex].focus();
+    activateBioTab(bioTabs[nextIndex].dataset.bioTab);
+  });
+});
+
 haikuFilter?.addEventListener("input", () => renderHaiku(haikuEntries));
 
 window.addEventListener("hashchange", () => {
@@ -206,4 +246,5 @@ window.addEventListener("hashchange", () => {
 });
 
 activateTab(tabFromHash(), { updateHash: false });
+activateBioTab("short");
 loadHaikuYear();

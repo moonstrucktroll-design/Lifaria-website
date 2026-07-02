@@ -123,34 +123,109 @@
               <p class="kicker">Bio</p>
               <h2>I lead product work in responsible AI and privacy-first personalization.</h2>
             </div>
+            <div class="bio-toggle" role="tablist" aria-label="Bio length">
+              <button
+                class="bio-toggle-button is-active"
+                id="bio-tab-short"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="bio-short"
+                data-bio-tab="short"
+              >
+                Short bio
+              </button>
+              <button
+                class="bio-toggle-button"
+                id="bio-tab-long"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="bio-long"
+                data-bio-tab="long"
+                tabindex="-1"
+              >
+                Long bio
+              </button>
+            </div>
             <div class="bio-body">
               <div class="bio-main">
-                <p>
-                  I am a product executive in Product Leadership at Google,
-                  with deep experience across responsible AI, privacy-first
-                  platforms, consumer technology, communications, mobility,
-                  e-commerce, and AdTech.
-                </p>
-                <p>
-                  Across more than two decades, I have worked in startups,
-                  growth-stage companies, and enterprise environments. I shape
-                  product vision, turn ambiguous spaces into durable strategy,
-                  and lead cross-functional teams through growth and
-                  transformation.
-                </p>
-                <p>
-                  My current work centers on privacy-first AI personalization:
-                  product architecture, governance models, memory and context
-                  handling, safe user-signal integration, and the trust
-                  requirements that determine whether intelligent systems
-                  deserve a place in daily life.
-                </p>
-                <p>
-                  Beyond product work, I am building Lifaria, a private Life
-                  Book beta, serving on the TheatreWorks Silicon Valley Board
-                  of Trustees, and keeping a weekly bilingual haiku practice in
-                  English and Russian.
-                </p>
+                <div
+                  class="bio-panel-copy is-active"
+                  id="bio-short"
+                  role="tabpanel"
+                  aria-labelledby="bio-tab-short"
+                  data-bio-panel="short"
+                >
+                  <p>
+                    I am a product leader at Google working on responsible AI
+                    and privacy-first personalization. My work sits at the
+                    intersection of product strategy, governance, user trust,
+                    and systems that handle personal context with care.
+                  </p>
+                  <p>
+                    I have spent more than two decades building consumer and
+                    platform products across communications, mobility,
+                    e-commerce, AdTech, and privacy-sensitive technology. I
+                    turn ambiguous spaces into clear product architecture and
+                    help teams make durable decisions under real constraints.
+                  </p>
+                  <p>
+                    Outside my Google work, I am building Lifaria, a private
+                    Life Book beta, serving on the TheatreWorks Silicon Valley
+                    Board of Trustees, and keeping a weekly bilingual haiku
+                    practice in English and Russian.
+                  </p>
+                </div>
+                <div
+                  class="bio-panel-copy"
+                  id="bio-long"
+                  role="tabpanel"
+                  aria-labelledby="bio-tab-long"
+                  data-bio-panel="long"
+                  hidden
+                >
+                  <p>
+                    I work in Product Leadership at Google, with a focus on
+                    responsible AI and privacy-first personalization. My work
+                    asks a practical question: when products remember, infer,
+                    recommend, or adapt, how do we make those behaviors useful,
+                    governed, and legible to the person using them?
+                  </p>
+                  <p>
+                    Over more than two decades, I have led product work across
+                    consumer technology, communications, mobility, e-commerce,
+                    AdTech, and platform systems. I have worked in startups,
+                    growth-stage companies, and enterprise environments, which
+                    has taught me how to move from ambiguity to product
+                    architecture, from strong opinion to testable strategy, and
+                    from isolated feature work to systems that can be operated
+                    responsibly.
+                  </p>
+                  <p>
+                    Much of my current attention is on the boundaries around
+                    AI: what context a system should use, what it should
+                    forget, when it should ask permission, how it should
+                    explain itself, and where human judgment must stay in the
+                    loop. I care about building products that can earn trust
+                    over time, not just demonstrate intelligence in a moment.
+                  </p>
+                  <p>
+                    Lifaria is my personal beta project around those ideas. It
+                    turns selected photos, notes, documents, and voice into a
+                    private Life Book, with sources, edits, and approval visible
+                    at each step. It is a product experiment, and also a way of
+                    thinking about memory, authorship, and the right role of AI
+                    in intimate material.
+                  </p>
+                  <p>
+                    Outside product work, I serve on the TheatreWorks Silicon
+                    Valley Board of Trustees and write weekly bilingual haiku in
+                    English and Russian. Theatre keeps me close to timing,
+                    attention, and human presence; poetry keeps me honest about
+                    compression, image, and meaning.
+                  </p>
+                </div>
               </div>
               <aside class="bio-aside" aria-label="Bio details">
                 <div>
