@@ -354,6 +354,7 @@ li + li {
 
 .essay-layout,
 .bio-body,
+.experience-overview,
 .product-intro,
 .haiku-intro {
   display: grid;
@@ -379,6 +380,7 @@ li + li {
 
 .principle-grid,
 .practice-grid,
+.experience-lenses,
 .product-grid,
 .blog-grid {
   display: grid;
@@ -387,9 +389,11 @@ li + li {
 
 .principle-grid article,
 .practice-grid article,
+.experience-lenses article,
 .product-grid article,
 .blog-grid article,
 .bio-aside,
+.timeline-card,
 .phone-card,
 .featured-haiku,
 .haiku-card {
@@ -401,6 +405,7 @@ li + li {
 
 .principle-grid article,
 .practice-grid article,
+.experience-lenses article,
 .product-grid article,
 .blog-grid article {
   min-height: 168px;
@@ -409,6 +414,8 @@ li + li {
 
 .principle-grid span,
 .practice-grid span,
+.experience-lenses span,
+.timeline-card > span,
 .product-grid span,
 .blog-grid span,
 .haiku-card span {
@@ -422,6 +429,8 @@ li + li {
 
 .principle-grid p,
 .practice-grid p,
+.experience-lenses p,
+.timeline-card p,
 .product-grid p,
 .blog-grid p {
   margin-bottom: 0;
@@ -494,6 +503,141 @@ li + li {
 .text-link:focus-visible {
   color: var(--ink);
   outline: none;
+}
+
+.experience-overview {
+  margin-bottom: 44px;
+}
+
+.experience-lenses {
+  grid-template-columns: 1fr;
+}
+
+.experience-timeline {
+  position: relative;
+  display: grid;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 171px;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(184, 145, 79, 0.62), rgba(76, 120, 152, 0.28));
+}
+
+.timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 140px 34px minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  margin-top: 0;
+}
+
+.timeline-date {
+  padding-top: 22px;
+  color: var(--clay);
+  font-size: 0.78rem;
+  font-weight: 760;
+  line-height: 1.25;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.timeline-node {
+  position: relative;
+  z-index: 1;
+  justify-self: center;
+  width: 18px;
+  height: 18px;
+  margin-top: 20px;
+  background: var(--paper);
+  border: 4px solid var(--blue);
+  border-radius: 50%;
+  box-shadow: 0 0 0 7px rgba(247, 244, 235, 0.92);
+}
+
+.timeline-item.is-current .timeline-node {
+  background: var(--ink);
+  border-color: var(--gold);
+}
+
+.timeline-item.is-board .timeline-node {
+  border-color: var(--sage);
+}
+
+.timeline-card {
+  min-width: 0;
+  padding: 24px 28px;
+}
+
+.timeline-card h3 {
+  margin-bottom: 12px;
+  font-family: var(--display-font);
+  font-size: 1.42rem;
+  font-weight: 600;
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-tags li {
+  margin: 0;
+  padding: 6px 10px;
+  color: var(--ink-2);
+  font-size: 0.78rem;
+  font-weight: 720;
+  line-height: 1.2;
+  background: rgba(223, 234, 240, 0.64);
+  border: 1px solid rgba(216, 210, 194, 0.9);
+  border-radius: 999px;
+}
+
+.timeline-role-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.timeline-role-list div {
+  min-width: 0;
+  padding: 12px 14px;
+  background: rgba(236, 238, 231, 0.58);
+  border-left: 3px solid var(--blue);
+  border-radius: 6px;
+}
+
+.timeline-role-list strong,
+.timeline-role-list span {
+  display: block;
+}
+
+.timeline-role-list strong {
+  margin-bottom: 4px;
+  color: var(--clay);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+}
+
+.timeline-role-list span {
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 720;
+  line-height: 1.35;
 }
 
 .product-intro {
@@ -750,6 +894,7 @@ li + li {
   .hero-section,
   .essay-layout,
   .bio-body,
+  .experience-overview,
   .product-intro,
   .haiku-intro {
     grid-template-columns: 1fr;
@@ -851,6 +996,7 @@ li + li {
   }
 
   .practice-grid,
+  .timeline-role-list,
   .blog-grid,
   .haiku-tools,
   .haiku-month-grid {
@@ -899,9 +1045,11 @@ li + li {
   .hero-portrait,
   .bio-aside,
   .principle-grid article,
+  .experience-lenses article,
   .practice-grid article,
   .product-grid article,
   .blog-grid article,
+  .timeline-card,
   .phone-card,
   .featured-haiku,
   .haiku-card {
@@ -919,6 +1067,35 @@ li + li {
   .bio-toggle-button {
     min-width: 0;
     padding: 0 12px;
+  }
+
+  .experience-timeline {
+    gap: 18px;
+    padding-left: 26px;
+  }
+
+  .experience-timeline::before {
+    top: 12px;
+    bottom: 12px;
+    left: 8px;
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .timeline-date {
+    padding-top: 0;
+    text-align: left;
+  }
+
+  .timeline-node {
+    position: absolute;
+    top: 2px;
+    left: -26px;
+    margin-top: 0;
   }
 
   .signal-strip div {
