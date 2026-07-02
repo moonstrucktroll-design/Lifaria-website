@@ -153,9 +153,12 @@ li + li {
 }
 
 .brand-lockup {
-  display: grid;
+  display: inline-grid;
+  justify-items: center;
   gap: 3px;
-  min-width: 250px;
+  width: max-content;
+  min-width: 0;
+  text-align: center;
 }
 
 .brand-wordmark {
@@ -165,10 +168,14 @@ li + li {
 }
 
 .brand-subtitle {
+  width: 178px;
   color: var(--muted);
   font-size: 0.72rem;
   font-weight: 760;
+  line-height: 1.15;
+  text-align: center;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .site-nav {
